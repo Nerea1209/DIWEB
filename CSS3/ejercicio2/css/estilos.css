@@ -1,0 +1,13 @@
+body, td, p {
+    color: black;
+    background-color: white;
+}
+
+.inverso {
+    color: white;
+    background-color: black;
+}
+
+#prueba {
+    background-color: aqua;
+}

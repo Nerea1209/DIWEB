@@ -1,0 +1,321 @@
+/* Programado para iPhone 12 Pro - VERSIÓN MÓVIL */
+
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+div#content {
+    display: flex;
+    flex-flow: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+/* Fin todo el documento */
+
+/* Cabecera */
+header {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    align-items: center;
+}
+
+/* Logo */
+header>picture#logo-cabecera {
+    flex: 0 40%;
+}
+
+header>picture#logo-cabecera>img {
+    width: 100%;
+    height: auto;
+    min-width: 10rem;
+    max-width: 15rem;
+}
+/* Fin logo */
+
+/* Iconos */
+header>nav#bloque-iconos {
+    margin-left: auto;
+}
+
+header>nav#bloque-iconos>ul {
+    display: flex;
+    flex-flow: row;
+}
+
+header>nav#bloque-iconos>ul>li {
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+/* Fin iconos */
+
+/* Menú desplegable */
+header>nav#menu-principal {
+    flex: 100%;
+}
+
+header>nav#menu-principal>div#hamburguesa>span:nth-child(1) {
+    font-size: 2rem;
+}
+
+header>nav#menu-principal>ul#menu {
+    display: none;
+}
+
+header>nav#menu-principal>div#hamburguesa {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    cursor: pointer;
+}
+/* Fin menú desplegable */
+
+/* Primera lista */
+header>nav#menu-principal>div#hamburguesa:hover+ul#menu,
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover {
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    width: 100%;
+    top: 7rem;
+    height: 200%;
+}
+
+header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li,
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li {
+    padding: 1rem 0;
+    border-bottom: 1px solid white;
+}
+
+header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li>a,
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li>a {
+    color: white;
+    padding-left: 1rem;
+}
+
+header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li>ul,
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li>ul {
+    display: none;
+}
+/* Fin primera lista */
+
+/* Sublistas */
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li:hover>ul {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(150, 150, 150);
+
+}
+
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li:hover>ul>li {
+    padding: 1rem;
+    flex: 100%;
+}
+
+header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li:hover>ul>li>a {
+    color: white;
+}
+/* Fin Sublistas */
+/* Fin Cabecera */
+
+/* Main */
+main>section#form-contacto {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+}
+
+main>section#form-contacto>h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+main>section#form-contacto>form#contacto {
+    display: flex;
+    flex-flow: column;
+}
+
+main>section#form-contacto>form#contacto>label {
+    display: none;
+}
+
+main>section#form-contacto>form#contacto>input,
+main>section#form-contacto>form#contacto>select,
+main>section#form-contacto>form#contacto>textarea {
+    height: 2.5rem;
+    width: 17rem;
+    padding: .5rem;
+    margin: .5rem 0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+main>section#form-contacto>form#contacto>select {
+    background-color: lightgray;
+    color: gray;
+}
+
+main>section#form-contacto>form#contacto>input:focus,
+main>section#form-contacto>form#contacto>select:focus,
+main>section#form-contacto>form#contacto>textarea:focus {
+    background-color: black;
+    color: white;
+}
+
+main>section#form-contacto>form#contacto>textarea,
+main>section#form-contacto>form#contacto>textarea:focus {
+    height: 10rem;
+}
+
+main>section#form-contacto>form#contacto>input[type="button"] {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+main>section#form-contacto>form#contacto>input[type="button"]:hover {
+    background-color: rgb(27, 27, 27);
+}
+/* Fin main */
+
+/* Footer */
+footer>nav#menu-adicional>ul {
+    display: flex;
+    flex-flow: column;
+    color: white;
+    align-items: center;
+}
+
+footer>nav#menu-adicional>ul>li {
+    padding: .5rem;
+}
+
+footer>nav#menu-adicional>ul>li>a {
+    color: white;
+}
+/* Fin footer */
+/* FIN VERSIÓN MÓVIL */
+
+/* Programado para iPad Air - VERSIÓN IPAD HORIZONTAL*/
+@media (min-width: 720px) {
+    
+    /* Cabecera */
+    header>nav#menu-principal>div#hamburguesa {
+        display: none;
+    }
+
+    /*Primera lista*/
+    header>nav#menu-principal>ul#menu,
+    header>nav#menu-principal>div#hamburguesa:hover+ul#menu,
+    header>nav#menu-principal>div#hamburguesa+ul#menu:hover {
+        background-color: black;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        position: static;
+        margin: 0;
+    }
+
+    header>nav#menu-principal>div#hamburguesa+ul#menu>li,
+    header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li,
+    header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li {
+        padding: 1rem;
+        border-bottom: none;
+    }
+
+    header>nav#menu-principal>div#hamburguesa+ul#menu>li>a,
+    header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li>a,
+    header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li>a {
+        color: white;
+        padding-left: 0;
+    }
+
+    header>nav#menu-principal>div#hamburguesa+ul#menu>li>ul,
+    header>nav#menu-principal>div#hamburguesa:hover+ul#menu>li>ul,
+    header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li>ul {
+        display: none;
+    }
+    /* Fin primera lista */
+
+    /* Sublistas */
+    header>nav#menu-principal>div#hamburguesa+ul#menu>li:hover>ul {
+        position: absolute;
+        top: 8rem;
+        right: 0;
+        width: 100%;
+    }
+
+    header>nav#menu-principal>div#hamburguesa+ul#menu:hover>li:hover>ul>li {
+        padding: .2rem;
+        flex: auto;
+        text-align: center;
+    }
+    /* Fin cabecera */
+
+    /* Main */
+    main>section#form-contacto>form#contacto {
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    main>section#form-contacto>form#contacto>label {
+        display: inline;
+        flex: 0 50%;
+        text-align: right;
+        padding-right: 4rem;
+    }
+
+    main>section#form-contacto>form#contacto>input,
+    main>section#form-contacto>form#contacto>select,
+    main>section#form-contacto>form#contacto>textarea {
+        flex: 0 30%;
+        margin-left: 4rem;
+    }
+
+    main>section#form-contacto>form#contacto>label[for="mensaje"] {
+        flex: 0 30%;
+        padding-right: 1rem;
+    }
+
+    main>section#form-contacto>form#contacto>span#caracteres {
+        flex: 0 20%;
+    }
+
+    main>section#form-contacto>form#contacto>input[type="button"] {
+        margin: auto;
+    }
+    /* Fin Main */
+
+    /* Footer */
+    footer>nav#menu-adicional>ul {
+        flex-flow: row wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer>nav#menu-adicional>ul>li {
+        flex: 0 40%;
+    }
+    /* Fin footer */
+    /* FIN VERSIÓN IPAD HORIZONTAL */
+
+}

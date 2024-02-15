@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+@font-face {
+    font-family: 'Queens Park';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/queens-park.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section#news {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+section#news > h2 {
+    font-family: Queens Park, serif;
+    font-size: 4rem;
+    text-align: center;
+    flex: 100%;
+}
+
+section#news > article {
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    flex: 100%;
+}
+
+section#news > article > img{
+    width: 100%;
+    height: auto;
+}
+
+section#news article h3,
+section#news article h4,
+section#news article h5 {
+    font-family: Oswald, serif;
+}
+
+section#news article h3 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+section#news article h4,
+section#news article h5 {
+    font-size: 1.2rem;
+    text-align: right;
+    line-height: 1.3;
+    margin: .3rem 0;
+    font-weight: 300;
+}
+
+section#news article h5 {
+    font-size: 1.1rem;
+}
+
+section#news article p {
+    font-family: Merriweather;
+    line-height: 1.6;
+}
+
+@media (min-width: 750px) {
+
+    section#news > article {
+        flex:0 25%;
+    }
+
+    section#news > article.breaking {
+        flex:0 50%;
+    }
+}

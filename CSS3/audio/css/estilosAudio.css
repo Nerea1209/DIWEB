@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: url("../images/fondo2.png");
+    background-repeat: no-repeat;
+    padding: 1rem;
+}
+
+div#content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 2rem;
+}
+
+header>span {
+    flex: 0 80%;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 12px;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+
+}
+
+main>img {
+    width: 70%;
+    max-width: 250px;
+    margin: 3rem auto;
+    border-radius: 10px;
+}
+
+main>section.info {
+    display: flex;
+    margin: 1rem;
+}
+
+main>section.info>img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+main>section.info>img#stop {
+    width: 3rem;
+    cursor: pointer;
+}
+
+main>section.info>div {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex: 50%;
+}
+
+main>section.info>div>h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+main>div.cancion {
+    display: flex;
+    flex-flow: row wrap;
+    margin: .5rem 1rem;
+
+}
+
+main>div.cancion>span {
+    flex: 50%;
+}
+
+main>div.cancion>span:last-child {
+    text-align: right;
+}
+
+.control {
+    position: relative;
+}
+
+.volumen-container {
+    position: absolute;
+    top: -110px;
+    display: none;
+    z-index: 5;
+    padding: .2rem;
+    background-color: #E8EAFF;
+    border-radius: 1rem;
+}
+
+#controlVolumen {
+    width: 6px;
+    margin: 5px;
+    height: 100px;
+    writing-mode: bt-lr;
+    appearance: slider-vertical;
+    cursor: pointer;
+}
+
+main>div.cancion>#linea {
+    cursor: pointer;
+    flex: 100%;
+    z-index: 4;
+    margin: 0;
+    -webkit-appearance: none;
+
+    /* Barrita */
+    &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+
+        height: .2rem;
+        border-radius: 1rem;
+        background-color: #00000000;
+    }
+
+    /* Puntito */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        visibility: hidden;
+        background-color: #6f6d6d00;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+}
+
+main>div.cancion>#progressBar {
+    flex: 100%;
+    -webkit-appearance: none;
+    height: .2rem;
+    border-radius: 1rem;
+
+    &::-webkit-progress-value {
+        -webkit-appearance: none;
+        background-color: #a9d3fa;
+    }
+
+
+
+
+}
+
+main>div.control {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+main>div.control>img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+main>div.control>img#play {
+    background-color: #FFE071;
+    border-radius: 50%;
+    width: 2.5rem;
+    padding: .5rem;
+}

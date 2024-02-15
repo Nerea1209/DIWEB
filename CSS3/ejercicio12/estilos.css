@@ -1,0 +1,43 @@
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #205279;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+/* Fin todo el documento */
+
+/* Menú de navegación */
+nav > ul {
+    display: flex;
+    background-color: #DDDDDD;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+nav > ul > li {
+    padding: 0 1rem;
+    border-right: 1px solid black;
+}
+
+nav > ul > li:nth-child(3) {
+    border-right: none;
+}
+
+nav > ul > li#login {
+    flex: 50%;
+    text-align: right;
+    border-right: none;
+}
+/* Fin menú de navegación */

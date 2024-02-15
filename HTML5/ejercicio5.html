@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <header>
+        <h1>Iniciar sesión</h1>
+    </header>
+    <nav></nav>
+    <main>
+        <form action="ejercicio5.html" method="post">
+            <p><input type="radio" name="tratamiento" value="sr" id="sr" autofocus> <label for="sr">Sr.</label>
+            <input type="radio" name="tratamiento" value="sra" id="sra"> <label for="sra">Sra.</label></p>
+            <p><input type="text" name="nombre" id="nombre" placeholder="Nombre / Razón Social" aria-label="Nombre / Razón Social"
+                title="Indique su nombre o razón social." maxlength="25"></p>
+            <p><input type="email" name="email" id="email" placeholder="Email*" aria-label="Email*" required
+                    title="Indique su email."></p>
+            <p><input type="password" name="clave" id="clave" placeholder="Contraseña*" aria-label="Contraseña*" required
+                    title="Introduzca una contraseña entre 8 y 12 caracteres" pattern="[A-Za-z0-9]{8,12}"></p>
+            <p><input type="date" name="dia" aria-label="Fecha de nacimiento" title="Indique su fecha de nacimiento"></p>
+            <p><input type="text" name="dni" placeholder="DNI/NIF/NIE*" aria-label="DNI/NIF/NIE*" required pattern="[0-9]{8}[A-Z]{1}" 
+                title="Indique su dni"></p>
+            <p><input type="text" name="direccion" id="direccion" placeholder="Dirección*" aria-label="Dirección*" required
+                title="Indique su dirección"></p>
+            <p><input type="text" name="codPostal" id="codPostal" placeholder="Código postal*" aria-label="Código postal*" required
+                title="Indique su código postal" pattern="[0-9]{5}"></p>
+            <p><input type="text" name="ciudad" id="ciudad" placeholder="Ciudad*" aria-label="Ciudad*" required
+                title="Indique su ciudad"></p>
+            <p>
+                <input list="paises" name="pais" id="pais" title="Indique el país">
+                <datalist id="paises">
+                    <option value="España">
+                    <option value="Francia">
+                    <option value="Alemania">
+                </datalist>
+            </p>
+            <p>
+                <input list="provincia" name="provincia" placeholder="Provincia*" aria-label="Provincia*" required title="Indique la provincia">
+                <datalist id="provincia">
+                    <option value="Málaga">
+                    <option value="Jaén">
+                    <option value="Almería">
+                </datalist>
+            </p>
+            <p><input type="text" name="info" id="info" placeholder="Información adicional" aria-label="Información adicional" 
+                title="Indique información adicional"></p>
+            <p><input type="tel" name="tel" id="tel" placeholder="Teléfono móvil*" aria-label="Teléfono móvil*" required
+                title="Indique su teléfono móvil" pattern="[0-9]{9}"></p>
+            <p><input type="checkbox" name="datos" id="datos">
+                <label for="datos">Estos datos personales se utilizarán para responder a sus búsquedas,<br> procesar sus pedidos o autorizar el acceso.</label></p>
+            <p><button type="submit" name="btnEnviar">Registrarse</button></p>
+        </form>
+    </main>
+</body>
+
+</html>

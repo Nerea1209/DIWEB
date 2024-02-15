@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+div#content {
+    display: flex;
+    flex-flow: column;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    background-color: #0B2238;
+    height: 4rem;
+    justify-content: center;
+    padding: .5rem;
+    color: white;
+    box-shadow: 0 4px 4px rgba(11, 34, 56, 0.25);
+}
+
+header>img {
+    width: 50px;
+    height: 50px;
+}
+
+header>h1 {
+    flex: 0 10%;
+    padding: 0 1rem;
+    line-height: 2rem;
+    margin: .5rem 0;
+}
+
+main {
+    padding-left: 1.5rem;
+    padding-top: 4rem;
+    background-image: url("../images/fondo.png");
+    background-repeat: no-repeat;
+}
+
+main>div {
+    display: flex;
+    overflow: auto;
+    padding: .5rem .2rem;
+}
+
+main>div::-webkit-scrollbar {
+    height: 1rem;
+}
+
+main>div>article {
+    flex: 0 30%;
+    max-width: 250px;
+    display: flex;
+    flex-flow: column;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    margin-right: 1rem;
+    padding: .5rem;
+}
+
+main>div>article>img {
+    border-radius: 10px;
+    width: 100%;
+    min-width: 110px;
+}
+
+main>div>article>h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+main>div>article>span {
+    font-size: 12px;
+}
+
+.btnPlay {
+    width: 2rem;
+    height: 2rem;
+    background-color: #FFE071;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(50%, -50%);
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.reproductor {
+    position: fixed;
+    background-color: #FFE071;
+    height: 58.5px;
+    display: flex;
+    width: 20.5rem;
+    right: .5rem;
+    bottom: 2rem;
+    padding: .5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    justify-content: space-around;
+    color: black;
+    text-decoration: none;
+}
+
+a.reproductor:active,
+a.reproductor:visited,
+a.reproductor:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.reproductor>img {
+    width: 45px;
+    height: 45px;
+    flex: 0 10%;
+    padding-right: 1rem;
+}
+
+.reproductor>img.cancion {
+    /* position: fixed; */
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    padding-right: 0;
+
+}
+
+.reproductor>div.info {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    flex: 0 80%;
+    padding-left: 1rem;
+}
+
+.reproductor>div.info>h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.reproductor>div.info>span {
+    font-size: 12px;
+}

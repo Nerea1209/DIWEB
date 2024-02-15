@@ -1,0 +1,223 @@
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+div#contenedor {
+    display: flex;
+    flex-flow: column;
+}
+/* Fin todo el documento */
+
+/* Cabecera */
+header {
+    display: flex;
+    flex-flow: row wrap;
+    padding: .5rem;
+}
+
+header > img {
+    width: 100%;
+    height: auto;
+}
+
+header>img#icono_menu {
+    flex: 0 10%;
+    max-width: 2rem;
+    margin-right: 2rem ;
+}
+
+header>img#like {
+    flex: 0 10%;
+    max-width: 2rem;
+}
+
+header>img#cesta {
+    flex: 0 10%;
+    max-width: 2rem;
+}
+
+header>img#logo {
+    flex: 0 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header>div#buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 100%;
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 1rem;
+}
+
+header>div#buscador>input#buscar {
+    width: 90%;
+    height: 2.5rem;
+    background: #EDEDED;
+    border: none;
+    font-size: 1rem;
+    float: left;
+    color: #C3C3C3;
+    text-align: center;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+header>div#buscador>input#buscar::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+header>div#buscador>input#buscar:-moz-placeholder {
+    /* Firefox 18- */
+    color: #65737e;
+}
+
+header>div#buscador>input#buscar::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #65737e;
+}
+
+header>div#buscador>input#buscar:-ms-input-placeholder {
+    color: #65737e;
+}
+
+header>div#buscador>span.icon {
+    position: absolute;
+    margin-right: 10rem;
+    z-index: 1;
+    color: #B8A38D;
+}
+
+header>div#buscador>input#buscar:hover, header>div#buscador>input#buscar:focus, header>div#buscador>input#buscar:active{
+    outline:none;
+    background: #ffffff;
+}
+/* Fin cabecera */
+
+/* Main */
+main > section {
+    display: flex;
+    flex-flow: row wrap;
+    padding: .5rem;
+}
+
+main > section > h2 {
+    flex: 100%;
+    text-align: center;
+}
+
+main > section > article {
+    flex: 0 50%;
+    padding: .2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+main > section > article > img {
+    position: absolute;
+    margin: .5rem;
+    padding: .2rem;
+    background-color: white;
+    border-radius: 100%;
+    align-self: flex-start;
+}
+
+main > section > article > picture {
+    flex: 100%;
+}
+
+main > section > article > picture > img {
+    width: 100%;
+    height: auto;
+}
+
+main > section > article > h3,
+main > section > article > p {
+    text-align: center;
+    margin: 0;
+    padding: .1rem;
+}
+
+main > section > article > h3 {
+    margin-top: .5rem;
+    flex: 100%;
+}
+
+main > section > article > p:nth-child(5),
+main > section > article > p:nth-child(6) {
+    flex: 0 50%;
+    text-align: left;
+    padding: .2rem;
+}
+
+main > section > article > p:nth-child(5) {
+    text-decoration: line-through;
+    text-align: right;
+}
+
+main > section > article > p:nth-child(6) {
+    font-weight: bold;
+}
+
+
+
+main > section > article > p:nth-child(4), 
+main > section > article > p:nth-child(7) {
+    flex: 100%;
+}
+/* Fin main */
+
+/* Footer */
+footer {
+    background-color: #DFDACE;
+    display: flex;
+    flex-flow: column;
+}
+
+footer>nav#menu-social>ul {
+    display: flex;
+    margin: 0;
+}
+
+footer>nav#menu-social>ul>li {
+    padding: 1rem;
+}
+
+footer > h4 {
+    margin: 0 1rem;
+}
+
+footer > nav#menu-adicional > ul {
+    display: flex;
+    flex-flow: column;
+    padding: 0 1rem;
+}
+
+footer > nav#menu-adicional > ul > li {
+    padding: .5rem 0;
+    border-bottom: 2px solid #CAC6BD;
+}
+/* Fin footer */

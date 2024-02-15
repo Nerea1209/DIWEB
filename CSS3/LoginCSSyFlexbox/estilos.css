@@ -1,0 +1,54 @@
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0em 0.5em;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+/* Fin Todo el documento */
+
+/* Formulario principal */
+main form#form-principal {
+    padding: 0em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    height: 16em;
+    max-width: 400px;
+}
+
+main form#form-principal a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding-left: 1em;
+}
+
+main form#form-principal input {
+    border: 0px;
+    padding: 1em 1.5em;
+    border-bottom: 1px solid #CCC;
+}
+
+main form#form-principal input::placeholder {
+    color: black;
+    padding: 1em 1.5em;
+    font-size: 14px;
+}
+
+main form#form-principal button {
+    background-color: #242321;
+    color: #988265;
+    width: 11rem;
+    border-radius: 10rem;
+    height: 3.5em;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* Fin Formulario principal */

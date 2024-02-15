@@ -1,0 +1,139 @@
+/* VERSIÓN MÓVIL */
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0rem 0.5rem;
+}
+
+div#contenedor {
+    display: flex;
+    flex-flow: column;
+}
+
+/* Fin Todo el documento */
+
+/* Cabecera */
+header>h1 {
+    text-align: left;
+}
+
+/* Fin cabecera */
+
+/* Formulario principal */
+main {
+    align-self: center;
+}
+main form#form-principal {
+    padding: 0rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    max-width: 25rem;
+}
+
+main form#form-principal div#radio {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+main form#form-principal a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding-left: 1rem;
+}
+
+main form#form-principal input,
+main form#form-principal datalist {
+    border: 0px;
+    border-bottom: 1px solid #CCC;
+    color: black;
+    padding: 1rem 1rem;
+    font-size: 14px;
+    margin: .5rem 0;
+}
+
+main form#form-principal input::placeholder {
+    color: black;
+    padding: 1rem 0rem;
+    font-size: 14px;
+}
+
+main form#form-principal label[for="dia"] {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+main form#form-principal div#checkbox {
+    padding: .5rem 0;
+}
+
+main form#form-principal button {
+    background-color: #242321;
+    color: #988265;
+    width: 11rem;
+    border-radius: 10rem;
+    height: 3.5em;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+main form#form-principal button:hover {
+    background-color: #3a3a39;
+    color: #b09675;
+    cursor: pointer;
+}
+
+/* Fin Formulario principal */
+/* FIN VERSIÓN MÓVIL */
+
+/* VERSIÓN IPAD HORIZONTAL */
+@media (min-width: 1024px) {
+
+    /* Cabecera */
+    header {
+        align-self: center;
+    }
+    /* Fin cabecera */
+
+    /* Formulario principal */
+    main form#form-principal {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        height: 40rem;
+        max-width: 60rem;
+    }
+
+    main form#form-principal div#radio {
+        flex: 100%;
+        padding-left: 1rem;
+    }
+
+    main form#form-principal input,
+    main form#form-principal label[for="dia"] {
+        flex: 0 46%;
+        margin: 1rem 1.2rem;
+    }
+
+    main form#form-principal label[for="dia"] {
+        line-height: 3.5rem;
+    }
+
+    main form#form-principal input[name="clave"] {
+        flex: 0 46%;
+        margin-right: 2rem;
+    }
+
+    main form#form-principal div#checkbox,
+    main form#form-principal button {
+        margin-left: 1rem;
+    }
+    /* Fin Formulario principal */
+}
+/* FIN VERSIÓN IPAD */

@@ -1,0 +1,118 @@
+/* Estilos de animación del placeholder */
+main > form#login > label:nth-child(2) {
+    position: absolute;
+    top: 7.8rem;
+    left: 4rem;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    color: #242321;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+
+
+main > form#login > input:nth-child(1):focus + label:nth-child(2),
+main > form#login > input:nth-child(1):valid + label:nth-child(2) {
+    transform: translateY(-.8rem);
+    font-size: 0.8rem;
+}
+
+main > form#login > label:nth-child(4) {
+    position: absolute;
+    top: 12.7rem;
+    left: 4rem;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    color: #242321;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+
+
+main > form#login > input:nth-child(3):focus + label:nth-child(4),
+main > form#login > input:nth-child(3):valid + label:nth-child(4) {
+    transform: translateY(-.8rem);
+    font-size: 0.8rem;
+}
+
+
+
+
+/* Fin estilos de animación del placeholder */
+
+/* Estilos de la página */
+
+/* VERSIÓN MÓVIL */
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #e2e1e1;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+div#contenedor {
+    display: flex;
+    flex-flow: column;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #242321;
+}
+/* Fin todo el documento */
+
+/* Cabecera */
+header > h1 {
+    font-size: 2.4rem;
+    margin: 0;
+
+}
+/* Fin cabecera */
+
+/* Main */
+main > form#login {
+    display: flex;
+    flex-flow: column;
+    height: 18rem;
+    justify-content: end;
+}
+
+main > form#login > input {
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #e0dfdf;
+    margin-bottom: 2rem;
+}
+/* 
+main > form#login > input::placeholder {
+    font-size: 1.1rem;
+    color: #242321;
+} */
+
+main > form#login > a {
+    padding: 0 0 2rem 1rem;
+}
+
+main > form#login > button {
+    background-color: #242321;
+    color: #918069;
+    padding: 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 14rem;
+}
+/* Fin main */
+/* FIN VERSIÓN MÓVIL */

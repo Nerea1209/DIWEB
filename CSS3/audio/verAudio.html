@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de audio</title>
+    <link rel="stylesheet" href="css/estilosAudio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <a href="index.html"><img src="icons/anguloAbajo.svg" alt="Cerrar"></a>
+            <span>REPRODUCIENDO AHORA...</span>
+            <img src="icons/info.svg" alt="Detalles">
+        </header>
+        <main>
+            <img id="portada" src="images/luna.jpg" alt="Portada de la canción">
+            <section class="info">
+                <div>
+                    <h2 id="titulo">LUNA</h2>
+                    <span id="artista">Feid, ATL Jacob</span>
+                </div>
+                <img id="stop" src="icons/stop.svg" alt="Parar">
+                <img id="corazon" src="icons/corazonVacio.svg" alt="Añadir a una lista">
+            </section>
+            <div class="cancion">
+                <input id="linea" type="range" min="0" value="0" step="1">
+                <progress id="progressBar" value="0"></progress>
+                <span id="inicio"></span>
+                <span id="duracion"></span>
+            </div>
+            <div class="control">
+                <img id="iconoSonido" src="icons/medioVol.svg" alt="Volumen medio">
+                <div id="volumen-container" class="volumen-container" style="display: none;">
+                    <input type="range" id="controlVolumen" min="0">
+                </div>
+                <img id="anterior" src="icons/atrasar.svg" alt="Volver a la canción anterior">
+                <img id="play" src="icons/play.svg" alt="Escuchar canción">
+                <img id="siguiente" src="icons/adelantar.svg" alt="Pasar a la siguiente canción">
+                <img id="bucle" src="icons/repetir.svg" alt="Canción en bucle">
+            </div>
+        </main>
+        <audio id="audio">
+            <source src="musica/mp3/luna.mp3" type="audio/mp3">
+            <source src="musica/ogg/luna.ogg" type="audio/ogg">
+        </audio>
+    </div>
+    <script src="js/funciones.js"></script>
+
+</html>

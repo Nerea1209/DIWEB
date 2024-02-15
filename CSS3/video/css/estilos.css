@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 1.3rem;
+    cursor: pointer;
+}
+
+li>img {
+    height: 1.2rem;
+    margin-right: .2rem;
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+}
+
+main>video {
+    width: 100%;
+}
+
+/* Subtítulos */
+main>video::cue {
+    color: white;
+    background-color: #0B2238;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+main:hover>div#controls {
+    visibility: visible;
+}
+
+main>div#controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    visibility: hidden;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    transition: all 0.2s ease 0.3s;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+main>div#controls>span {
+    flex: 0 30%;
+    line-height: 1.5rem;
+    padding-left: .5rem;
+}
+
+main>div#controls>div>* {
+    margin: 0 .1rem;
+}
+
+main>div#controls>div#centro {
+    margin: 0 auto;
+}
+
+main>div#controls>div:nth-child(3) {
+    flex: 0 30%;
+    text-align: right;
+}
+
+main>div#controls>div:nth-child(3)>img#parar {
+    margin: 0 auto;
+    display: none;
+}
+
+main>div#controls>div:nth-child(3)>img#pantalla {
+    padding: .1rem;
+}
+
+main>div#controls>div:nth-child(3)>img.repetir {
+    display: none;
+}
+
+main>div#controls>div:nth-child(3)>div>ul {
+    display: flex;
+    flex-flow: column;
+    list-style: none;
+    margin-right: 1rem;
+    padding: 0;
+    width: 220px;
+    max-height: 144px;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    background-color: #CCC;
+    border-radius: .5rem;
+}
+
+main>div#controls>div:nth-child(3)>div>ul>li {
+    padding: .5rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+main>div#controls>div:nth-child(3)>div>ul>li:last-child {
+    border-bottom: none;
+}
+
+main>div#controls>input#linea {
+    cursor: pointer;
+    flex: 100%;
+    margin: 0;
+    border-radius: 1rem;
+    height: .35rem;
+    appearance: none;
+
+    /* Cambio el slider para los navegadores basados en chromium (Chrome, Safari, Opera, and Edge Chromium) */
+    &::-webkit-slider-runnable-track {
+        height: 0.5rem;
+        border-radius: 20rem;
+        background: #AAA;
+        /* Por compatibilidad en los navegadores antiguos */
+        background: linear-gradient(to right, #AAA calc(var(--value) * 1%), #606063 0);
+    }
+
+    &::-webkit-slider-thumb {
+        /* Quito la apariencia predeterminada */
+        appearance: none;
+        /* Centro el circulo en la barra */
+        margin-top: -2px;
+        height: .8rem;
+        width: .8rem;
+        border-radius: 100%;
+        border: none;
+        background-color: #AAA;
+    }
+
+    &:hover::-webkit-slider-thumb {
+        background-color: #DDD;
+    }
+
+    /* Cambio el slider para mozilla */
+    &::-moz-range-track {
+        height: 0.5rem;
+        border-radius: 20rem;
+        background: #AAA;
+        /* Por compatibilidad en los navegadores antiguos */
+        background: linear-gradient(to right, #AAA calc(var(--value) * 1%), #606063 0);
+    }
+
+    &::-moz-range-thumb {
+        /* Quito la apariencia predeterminada */
+        appearance: none;
+        /* Centro el circulo en la barra */
+        margin-top: -2px;
+        height: .8rem;
+        width: .8rem;
+        border-radius: 100%;
+        background-color: #AAA;
+        border: none;
+    }
+
+    &:hover::-moz-range-thumb {
+        background-color: #DDD;
+    }
+}
+
+main>div#controls>div>div#volumen-container {
+    display: block;
+    position: absolute;
+    bottom: 2.2rem;
+    right: 4.3rem;
+    cursor: pointer;
+}
+
+main>div#controls>div>div#volumen-container>input#controlVolumen {
+    width: 6px;
+    margin: 5px;
+    height: 100px;
+    writing-mode: bt-lr;
+    appearance: slider-vertical;
+    cursor: pointer;
+}
+
+main>div#controls>div>div#opciones2 {
+    display: block;
+    position: absolute;
+    bottom: 14rem;
+    right: -.5rem;
+    cursor: pointer;
+    z-index: 4;
+    color: black;
+}

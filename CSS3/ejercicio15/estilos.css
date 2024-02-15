@@ -1,0 +1,79 @@
+:root {
+    --color-azul: #ADD6EF;
+    --color-gris: #1A2F2A;
+    --color-gris-claro: #696969;
+    --color-blanco: white;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--color-azul);
+    color: var(--color-gris);
+}
+
+input#hamburger {
+    display: none;
+}
+
+label.menu-toogle::after {
+    content: "≡";
+    font-size: 3rem;
+    line-height: 2rem;
+    text-align: center;
+    background-color: var(--color-gris);
+    color: var(--color-blanco);
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+nav.main-menu {
+    display: flex;
+    flex-flow: column;
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    background-color: var(--color-gris);
+    text-align: center;
+    padding: 0.2rem;
+    transition: left .3s ease;
+}
+
+nav.main-menu > a.item-menu{
+    padding: .5rem;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+nav.main-menu > a.current{
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-gris-claro);
+}
+
+input#hamburger:checked + label.menu-toogle,
+input#hamburger:checked ~ main.main-container {
+    margin-left: 200px;
+}
+
+input#hamburger:checked ~ nav.main-menu{
+    left: 0;
+    position: fixed;
+}
+
+main.main-container > h2 {
+    text-align: center;
+}
+

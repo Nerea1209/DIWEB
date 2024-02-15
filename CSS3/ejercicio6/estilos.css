@@ -1,0 +1,63 @@
+/* Todo el documento */
+* {
+    box-sizing: border-box;
+}
+
+div#contenido {
+    display: flex;
+    flex-flow: column;
+}
+
+div#contenido header, div#contenido footer{
+    padding: 0 1rem;
+}
+
+/* Fin de todo el documento */
+
+/* Sección de ofertas */
+div#contenido main section#ofertas {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div#contenido main section#ofertas article.item-oferta {
+    display: flex;
+    flex-flow: column;
+    border: 2px solid lightgray;
+    flex: 100%;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: .5rem 1rem;
+    align-items: center;
+}
+
+div#contenido main section#ofertas article.item-oferta > ul {
+    align-self: baseline;
+}
+
+div#contenido main section#ofertas article.item-oferta > h3,
+div#contenido main section#ofertas article.item-oferta > img {
+    order: -1;
+    text-align: center;
+    width: 90%;
+    height: auto;
+}
+
+div#contenido main section#ofertas article.item-oferta > button.boton-cesta {
+    background-color: orange;
+    padding: .5rem 1rem;
+    align-self: center;
+    color: white;
+    border: 1px solid black;
+    border-radius: .3rem;
+    font-weight: bold;
+    box-shadow: 1px 2px 0px 0px lightgreen;
+    margin-top: auto;
+}
+/* Fin de sección ofertas */
+
+@media (min-width: 550px) {
+    div#contenido main section#ofertas article.item-oferta {
+        flex: 0 40%;
+    }
+}
