@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         // Constructor del slider
         pb.init = function (settings) {
-            this.settings = settings;
+            this.settings = settings || { duration: 3000 };
             var loscontroles = "";
             // console.log("Inicializado");
             SliderInit(); // Para inicializar el slider
