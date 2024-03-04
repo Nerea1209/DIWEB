@@ -82,12 +82,14 @@ $(document).ready(function () {
             // Añadimos la clase al control del panel seleccionado
             controles.eq(nextSlider).addClass("active");
             // Efectos de transición
-            paneles.eq(currentSlider).css("position", "relative")
-            paneles.eq(nextSlider).css("position", "relative")
+            paneles.css("position", "relative")
             paneles.eq(nextSlider).css("left", "100%");
-            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
+            paneles.eq(nextSlider).css("display", "block");
             paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
+            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
 
+            console.log(currentSlider)
+            console.log(nextSlider)
             // Actualizamos las variables
             currentSlider = nextSlider;
             nextSlider += 1;
@@ -117,11 +119,11 @@ $(document).ready(function () {
             // Añadimos la clase al control del panel seleccionado
             controles.eq(indice).addClass("active");
             // Efectos de transición
-            paneles.eq(currentSlider).css("position", "relative")
-            paneles.eq(nextSlider).css("position", "relative")
+            paneles.css("position", "relative")
             paneles.eq(nextSlider).css("left", "100%");
-            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
+            paneles.eq(nextSlider).css("display", "block");
             paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
+            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
 
             // Actualizamos las variables
             currentSlider = indice;
