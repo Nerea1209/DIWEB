@@ -41,6 +41,16 @@ $(document).ready(function () {
                     cambiarPanel($(this).index());
                 }
             })
+
+            // Detenemos el slider si nos posicionamos encima de una imagen
+            $(".slider-wrapper img").on("mouseenter", function () {
+                clearInterval(SliderInterval);
+            });
+
+            // Al salir de la imagen se reactiva
+            $(".slider-wrapper img").on("mouseleave", function () {
+                SliderInit();
+            });
         }
 
         // Función que inicializa el slider
@@ -72,8 +82,11 @@ $(document).ready(function () {
             // Añadimos la clase al control del panel seleccionado
             controles.eq(nextSlider).addClass("active");
             // Efectos de transición
-            paneles.eq(currentSlider).fadeOut("slow");
-            paneles.eq(nextSlider).fadeIn("slow");
+            paneles.eq(currentSlider).css("position", "relative")
+            paneles.eq(nextSlider).css("position", "relative")
+            paneles.eq(nextSlider).css("left", "100%");
+            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
+            paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
 
             // Actualizamos las variables
             currentSlider = nextSlider;
@@ -104,9 +117,11 @@ $(document).ready(function () {
             // Añadimos la clase al control del panel seleccionado
             controles.eq(indice).addClass("active");
             // Efectos de transición
-            paneles.eq(currentSlider).fadeOut("slow");
-            // El siguiente panel del slider es el que indique el parametro indice
-            paneles.eq(indice).fadeIn("slow");
+            paneles.eq(currentSlider).css("position", "relative")
+            paneles.eq(nextSlider).css("position", "relative")
+            paneles.eq(nextSlider).css("left", "100%");
+            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
+            paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
 
             // Actualizamos las variables
             currentSlider = indice;
@@ -120,6 +135,8 @@ $(document).ready(function () {
 
     }()); // ()) es para que se ejecute automáticamente
 
+
+
     // Llamada al constructor
-    SliderModule.init({ duration: 2000 });
+    SliderModule.init({ duration: 3000 });
 })
