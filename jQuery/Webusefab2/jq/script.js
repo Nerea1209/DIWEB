@@ -77,6 +77,36 @@ $(document).ready(function () {
         $(document).scrollTop(0);
     })
 
+    $("article.item a:last-child .comprar").hide();
+
+
+    $("article.item").on({
+        mouseenter: function () {
+            $("a:last-child .comprar", this).show();
+        },
+        mouseleave: function () {
+            $("a:last-child .comprar", this).hide();
+
+        }
+    });
+
+    try {
+        $('main').slick({
+            dots: true,
+            infinite: false,
+            speed: 500,
+            fade: false,
+            cssEase: 'linear',
+            arrows: true,
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 1,
+            variableWidth: false,
+            initialSlide: 1,
+        });
+    } catch (error) {
+        console.error('Error durante la inicialización del carrusel:', error);
+    }
 
 });
 

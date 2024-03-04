@@ -197,7 +197,7 @@ descarga.addEventListener('click', () => descargar());
 function descargar() {
     // Cambia "mi_video.mp4" al nombre de tu archivo de video
     let videoUrl = "videos/" + listaVideos.videos[actual].mp4;
-    0
+
     // Crea un enlace temporal y simula un clic para iniciar la descarga
     let a = document.createElement('a');
     a.href = videoUrl;
