@@ -18,6 +18,10 @@ $(document).ready(function () {
         // Constructor del slider
         pb.init = function (settings) {
             this.settings = settings || { duration: 3000 };
+            var imagenes = ['<img src="https://c2.staticflickr.com/6/5094/5531620171_82185d6285_z.jpg">',
+                '<img src="https://c2.staticflickr.com/2/1142/5112412572_6b07684fd6_z.jpg">',
+                '<img src="https://c1.staticflickr.com/9/8360/8276578922_f65a266891_z.jpg">',
+                '<img src="https://c2.staticflickr.com/4/3534/4569643612_929f475102_z.jpg">'];
             var loscontroles = "";
             // console.log("Inicializado");
             SliderInit(); // Para inicializar el slider
@@ -25,9 +29,9 @@ $(document).ready(function () {
             // Creamos los controles en tiempo de ejecución
             for (var i = 0; i < lengthSlider; i++) {
                 if (i == 0)
-                    loscontroles += "<li class='active'></li>";
+                    loscontroles += "<li class='active'>" + imagenes[i] + "</li>";
                 else
-                    loscontroles += "<li></li>";
+                    loscontroles += "<li>" + imagenes[i] + "</li>";
             }
             // console.log(loscontroles);
 
@@ -40,7 +44,17 @@ $(document).ready(function () {
                 if (currentSlider !== $(this).index()) {
                     cambiarPanel($(this).index());
                 }
+
             })
+
+            // Controles laterales
+            $("#side-controls li:nth-child(1)").on("click", function () {
+                cambiarPanel(currentSlider - 1);
+            });
+
+            $("#side-controls li:nth-child(2)").on("click", function () {
+                cambiarPanel(currentSlider + 1);
+            });
 
             // Detenemos el slider si nos posicionamos encima de una imagen
             $(".slider-wrapper img").on("mouseenter", function () {
@@ -51,6 +65,20 @@ $(document).ready(function () {
             $(".slider-wrapper img").on("mouseleave", function () {
                 SliderInit();
             });
+
+            $(".control-buttons li").on("mouseenter", function (event) {
+                $("#preview-image").attr("src", $(this).children().attr("src"));
+                $("#preview-container").css({
+                    "bottom": $(window).height() - event.pageY + 35 + "px",
+                    "left": event.pageX - 100 + "px",
+                })
+                console.log($(window).height() - event.pageY + 20 + "px")
+                $("#preview-container").fadeIn("fast");
+            })
+
+            $(".control-buttons li").on("mouseleave", function () {
+                $("#preview-container").fadeOut("fast");
+            })
         }
 
         // Función que inicializa el slider
@@ -83,13 +111,9 @@ $(document).ready(function () {
             controles.eq(nextSlider).addClass("active");
             // Efectos de transición
             paneles.css("position", "relative")
-            paneles.eq(nextSlider).css("left", "100%");
-            paneles.eq(nextSlider).css("display", "block");
+            paneles.eq(nextSlider).css({ "left": "100%", "display": "block" });
             paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
             paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
-
-            console.log(currentSlider)
-            console.log(nextSlider)
             // Actualizamos las variables
             currentSlider = nextSlider;
             nextSlider += 1;
@@ -119,15 +143,21 @@ $(document).ready(function () {
             // Añadimos la clase al control del panel seleccionado
             controles.eq(indice).addClass("active");
             // Efectos de transición
-            paneles.css("position", "relative")
-            paneles.eq(nextSlider).css("left", "100%");
-            paneles.eq(nextSlider).css("display", "block");
-            paneles.eq(nextSlider).animate({ left: "0%" }, "slow");
-            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow");
+            paneles.css("position", "relative");
+
+            // Configuramos el siguiente panel para que aparezca desde la derecha
+            paneles.eq(indice).css({ "left": "100%", "display": "block" });
+
+            // Animamos los paneles actual y siguiente
+            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow", function () {
+                // Esta función se ejecuta cuando la animación del panel actual se completa
+                paneles.eq(currentSlider).css({ "display": "block", "left": "0%" });
+            });
+            paneles.eq(indice).animate({ left: "0%" }, "slow");
 
             // Actualizamos las variables
             currentSlider = indice;
-            nextSlider = indice + 1;
+            nextSlider = indice + 1
 
             // Reactivar el Slider
             SliderInit();
