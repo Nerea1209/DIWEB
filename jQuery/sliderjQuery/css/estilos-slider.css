@@ -174,10 +174,13 @@ h1 {
   filter: grayscale(100%) blur(.5px);
 }
 
-.control-buttons li.active img {
+.control-buttons li.active {
   filter: contrast(120%);
-}
 
+  & img {
+    filter: grayscale(0);
+  }
+}
 
 .authors {
   text-align: center;

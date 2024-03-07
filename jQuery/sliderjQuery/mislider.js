@@ -67,16 +67,18 @@ $(document).ready(function () {
             });
 
             $(".control-buttons li").on("mouseenter", function (event) {
+                $("#preview-container").stop(false, true);
                 $("#preview-image").attr("src", $(this).children().attr("src"));
                 $("#preview-container").css({
                     "bottom": $(window).height() - event.pageY + 35 + "px",
                     "left": event.pageX - 100 + "px",
                 })
-                console.log($(window).height() - event.pageY + 20 + "px")
+                // console.log($(window).height() - event.pageY + 20 + "px")
                 $("#preview-container").fadeIn("fast");
             })
 
             $(".control-buttons li").on("mouseleave", function () {
+                $("#preview-container").stop(false, true);
                 $("#preview-container").fadeOut("fast");
             })
         }
@@ -145,15 +147,28 @@ $(document).ready(function () {
             // Efectos de transición
             paneles.css("position", "relative");
 
-            // Configuramos el siguiente panel para que aparezca desde la derecha
-            paneles.eq(indice).css({ "left": "100%", "display": "block" });
+            if ((currentSlider == 0 && indice != lengthSlider - 1) || (currentSlider == lengthSlider - 1 && indice == 0) || (indice > currentSlider && currentSlider != 0)) {
+                // Configuramos el siguiente panel para que aparezca desde la derecha
+                paneles.eq(indice).css({ "left": "100%", "display": "block" });
 
-            // Animamos los paneles actual y siguiente
-            paneles.eq(currentSlider).animate({ left: "-100%" }, "slow", function () {
-                // Esta función se ejecuta cuando la animación del panel actual se completa
-                paneles.eq(currentSlider).css({ "display": "block", "left": "0%" });
-            });
-            paneles.eq(indice).animate({ left: "0%" }, "slow");
+                // Animamos los paneles actual y siguiente
+                paneles.eq(currentSlider).animate({ left: "-100%" }, "slow", function () {
+                    // Esta función se ejecuta cuando la animación del panel actual se completa
+                    paneles.eq(currentSlider).css({ "display": "block", "left": "0%" });
+                });
+                paneles.eq(indice).animate({ left: "0%" }, "slow");
+            } else {
+                // Configuramos el siguiente panel para que aparezca desde la derecha
+                paneles.eq(indice).css({ "left": "-100%", "display": "block" });
+
+                // Animamos los paneles actual y siguiente
+                paneles.eq(currentSlider).animate({ left: "100%" }, "slow", function () {
+                    // Esta función se ejecuta cuando la animación del panel actual se completa
+                    paneles.eq(currentSlider).css({ "display": "block", "left": "0%" });
+                });
+                paneles.eq(indice).animate({ left: "0%" }, "slow");
+            }
+
 
             // Actualizamos las variables
             currentSlider = indice;
